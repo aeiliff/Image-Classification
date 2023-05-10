@@ -1,0 +1,5 @@
+from sklearn.neural_network import MLPClassifier
+r = MLPClassifier (hidden_layer_sizes = (5, 20), activation='relu')
+r.fit (x_train, y_train)
+yp_test = r.predict (x_test)
+print ('Test Accuracy: ', accuracy_score (yp_test, y_test))

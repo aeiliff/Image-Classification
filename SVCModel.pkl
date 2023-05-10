@@ -1,0 +1,12 @@
+param_grid = {'C': [10, 100], 'gamma': [0.0001, 0.001, 0.1, 1, 10], 'kernel': ['rbf']}
+svc1 = SVC()
+
+svc = GridSearchCV (svc1, param_grid)
+svc.fit (x_train, y_train)
+
+print (svc.best_params_)
+ypred_train = svc.predict (x_train)
+ypred_test = svc.predict (x_test)
+
+print ('Train Accuracy: ', accuracy_score (ypred_train, y_train))
+print ('Test Accuracy: ', accuracy_score (ypred_test, y_test))

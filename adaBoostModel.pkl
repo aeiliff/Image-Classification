@@ -1,0 +1,6 @@
+from sklearn.ensemble import AdaBoostClassifier
+
+ab = AdaBoostClassifier(n_estimators = 9)
+ab.fit(x_train, y_train)
+y_pred3 = ab.predict(x_test)
+print('Accuracy =', accuracy_score(y_pred3, y_test))
